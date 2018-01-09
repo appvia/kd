@@ -10,6 +10,8 @@ COPY bin/kd_linux_amd64 /bin/kd
 
 RUN chmod +x /bin/kd
 
+RUN touch /root/.netrc && chmod 777 /root/.netrc
+
 RUN set -x ; \
     addgroup -S kd ; \
     adduser -D -S -G kd kd && exit 0 ; exit 1
